@@ -16,8 +16,8 @@ public class Connector
 {
     
     private final String url="jdbc:mysql://localhost/pojistovna";
-    private final String username="squealer";
-    private final String password="snort4oink";
+    private final String username="";
+    private final String password="";
     
     private Connection connection=null;
     
