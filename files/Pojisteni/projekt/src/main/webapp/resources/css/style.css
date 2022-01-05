@@ -1,0 +1,65 @@
+
+body
+{
+    background-color: #c0c0c0;
+}
+
+.container-main
+{
+    background-color: white;
+    height: 100%;
+    border: 1px solid var(--dark);
+}
+
+
+.navbar-underline
+{
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-underline:hover
+{
+    border-bottom: 2px solid white;
+}
+
+
+.form-control::placeholder
+{
+    color: #e0e0e0;
+    opacity:1;
+}
+
+.form-control:-ms-input-placeholder
+{
+    color: #e0e0e0;
+}
+
+.form-control::-ms-input-placeholder
+{
+    color: #e0e0e0;
+}
+
+
+@media (max-width: 576px)
+{
+    legend
+    {
+        display:none;
+    }
+}
+
+@media (min-width: 576px)
+{
+    legend
+    {
+        font-size: 1rem;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+}
+
+hr
+{
+    border: 1px solid black;
+    margin: 0.5rem 0;
+}
