@@ -1,5 +1,4 @@
 Springová verze systému pro evidenci pojištění
-(rozpracováno)
 
 - Java / Spring Boot
 - Spring Data JPA
