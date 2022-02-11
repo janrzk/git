@@ -7,4 +7,4 @@ Modelový projekt systému pro evidenci pojištění
 - JSF
 - Boostrap
     
-Webová aplikace pro správu osobních údajů a údajů o pojištění osob. Entity jsou uloženy v SQL databázi. Webové rozhraní je plně responzivní.
+Webová aplikace slouží ke správě osobních údajů a údajů o pojištění osob. Entity jsou uloženy v SQL databázi. Webové rozhraní je plně responzivní.
