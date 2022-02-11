@@ -1,5 +1,5 @@
 Modelový projekt systému pro evidenci pojištění
-(základní verze, verze využívající Spring a JPA je k dispozici ve složce SpringPojisteni)
+(základní verze, verze využívající Spring a JPA je ve složce SpringPojisteni)
 
 - Java EE
 - SQL
