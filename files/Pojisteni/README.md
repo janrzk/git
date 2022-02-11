@@ -1,7 +1,10 @@
-Modelový projekt informačního systému pro správu pojištění
+Modelový projekt systému pro evidenci pojištění
+(základní verze, verze využívající Spring a JPA je k dispozici ve složce SpringPojisteni)
 
 - Java EE
 - SQL
-- responzivní webdesign
-
-Webová aplikace slouží ke správě osobních údajů a údajů o pojištění evidovaných osob. Entity jsou uloženy v SQL databázi. Webové rozhraní je plně responzivní.
+- JDBC
+- JSF
+- Boostrap
+    
+Webová aplikace pro správu osobních údajů a údajů o pojištění osob. Entity jsou uloženy v SQL databázi. Webové rozhraní je plně responzivní.

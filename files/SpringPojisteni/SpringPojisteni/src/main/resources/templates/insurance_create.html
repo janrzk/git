@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="layouts/layout"
+      >
+  
+  <body>
+
+    <div layout:fragment="content">
+
+      <div class="mb-3">
+        <span class="h5">
+          Vytvoření nového pojištění
+        </span>
+      </div>
+
+      <form th:if="${person}" action="#" th:action="@{/insurance_create}" th:object="${insurance}" method="post"
+            class="form mt-4">
+
+        <div class="form-row mb-2">
+          <div class="col-4 col-md-3">
+            <label for="name">Jméno osoby:</label>
+          </div>
+          <div class="col-8 col-md-9">
+            <span th:text="${person.name}+' '+${person.surname}"/>
+          </div>
+        </div>
+
+        <div class="form-row mb-2">
+          <div class="col-4 col-md-3">
+            <label for="name">Rodné číslo osoby:</label>
+          </div>
+          <div class="col-8 col-md-9">
+            <span th:text="${person.PersonalNo}"/>
+          </div>
+        </div>
+        
+        <div class="form-row mb-2">
+          <div class="col-4 col-md-3">
+            <label for="name">Číslo smlouvy:</label>
+          </div>
+          <div class="col-8 col-md-9">
+            <input id="name" placeholder="12345" th:field="*{contractNo}"
+                   class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-row mb-2">
+          <div class="col-4 col-md-3">
+            <label for="surname">Typ pojištění:</label>
+          </div>
+          <div class="col-8 col-md-9">
+            <input id="surname" placeholder="životní pojištění" th:field="*{type}"
+                   class="form-control"/>
+          </div>
+        </div>
+        
+        <a href="person_list" class="btn btn-primary mr-2">Zpět</a>
+        <button type="submit" class="btn btn-success mr-2">Vytvořit</button>
+
+      </form>
+
+      <a th:if="not ${insurance}" href="person_list" class="btn btn-primary mr-2">Zpět</a>
+      
+    </div>
+    
+  </body>
+  
+</html>

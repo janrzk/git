@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="layouts/layout"
+      >
+  
+  <body>
+
+    <div layout:fragment="content">
+      
+
+    <div th:if="${person}" class="row">
+      <div class="col-12">
+        <span th:text="${'Pojištění osoby '+person.name+' '+person.surname}" class="h5"/>
+        <span th:text="${'r.č. '+person.personalNo}" class="text-secondary text-small"/>
+      </div>
+      
+      <div class="col-12 mt-2 mb-3">
+        <span th:if="${#lists.isEmpty(insuranceItems)}"
+              class="text-danger">Tato osoba nemá sjednáno žádné pojištění.
+        </span>
+      
+        <form>
+          <div th:each="insuranceItem:${insuranceItems}">
+
+            <div class="card mb-1">
+              <div class="card-body">
+                <span th:text="' '+${insuranceItem.contractNo}"/>
+                <span th:text="${insuranceItem.type}"/>
+                <a href="#" class="btn btn-sm btn-warning float-right">Upravit</a>
+              </div>
+            </div>
+
+          </div>
+        </form>
+        
+      </div>
+      
+      <div class="col-12">
+        <a href="person_list" class="btn btn-primary mr-2">Zpět</a>
+        <a href="insurance_create" class="btn btn-success">Přidat pojištění</a>
+      </div>
+      
+    </div>
+    
+    <a th:if="not ${person}" href="person_list" class="btn btn-primary">Zpět</a>      
+    
+  </body>
+  
+</html>

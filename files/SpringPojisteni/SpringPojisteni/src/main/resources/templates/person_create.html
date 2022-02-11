@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="layouts/layout"
+      >
+  
+  <body>
+
+    <div layout:fragment="content">
+
+      <div class="mb-3">
+        <span class="h5">
+          Vytvoření nové osoby
+        </span>
+      </div>
+      
+      <form action="#" th:action="@{/person_create}" th:object="${person}" method="post"
+            class="form mt-4">
+        <div class="row">
+          
+          <div class="form-group col-12 col-md-6">
+            <legend>Základní údaje</legend>                    
+
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="name">Jméno:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{name}" placeholder="Jan"
+                       class="form-control"/>
+              </div>
+            </div>
+            
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="surname">Příjmení:</label>
+              </div>
+              <div class="col-10">
+                <input th:field="*{surname}" placeholder="Novák"
+                       class="form-control"/>
+              </div>
+            </div>
+            
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="personalNo">Rodné číslo:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{personalNo}" placeholder="1122334444"
+                       class="form-control"/>
+              </div>
+            </div>            
+          </div>
+
+          <div class="form-group col-12 col-md-6">
+            <legend>Trvalé bydliště</legend>                    
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="street">Ulice:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{street}" placeholder="Zahradní 12"
+                       class="form-control"/>
+              </div>
+            </div>
+
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="muni">Obec:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{muni}" placeholder="Nymburk"
+                       class="form-control"/>
+              </div>
+            </div>
+
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="postCode">PSČ:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{postCode}" placeholder="12345"
+                       class="form-control"/>
+              </div>
+            </div>
+          </div>    
+        </div>
+        
+        <div class="row">
+
+          <div class="form-group col-12 col-md-6">
+            <legend>Kontakt</legend>                    
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="phoneNo">Telefon:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{phoneNo}" placeholder="987654321"
+                       class="form-control"/>
+              </div>
+            </div>
+            <div class="form-row mb-2">
+              <div class="col-2">
+                <label for="email">E-mail:</label>
+              </div>
+              <div class="col-10">
+                <input type="text" th:field="*{email}" placeholder="jan@novak.cz"
+                       class="form-control"/>
+              </div>
+            </div>                            
+          </div>
+
+        </div>        
+
+        <input type="submit" value="Vytvořit"
+               class="btn btn-success mr-2"/>
+        
+      </form>
+      
+      
+    </div>
+    
+  </body>
+  
+</html>

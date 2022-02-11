@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="layouts/layout"
+      >
+  
+  <body>
+
+    <header th:fragment="header" class="container">
+
+      <div class="row">
+        <div class="col bg-dark">
+
+
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav mr-auto d-flex">
+
+                <li class="nav-item navbar-underline mr-2">
+                  <a class="nav-link text-white" href="/index">
+                    Úvodní stránka
+                  </a>
+                </li>
+
+                <li class="nav-item navbar-underline mr-2">
+                  <a class="nav-link text-white" href="/person_list">
+                    Osoby a pojištění
+                  </a>
+                </li>
+
+                <li class="nav-item navbar-underline mr-2">
+                  <a class="nav-link text-white" href="/person_create">
+                    Nová osoba
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+          </nav>
+
+        </div>
+      </div>
+    </header>   
+    
+  </body>
+  
+</html>

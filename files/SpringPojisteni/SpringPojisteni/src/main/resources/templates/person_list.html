@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      
+      layout:decorate="layouts/layout"
+      >
+  
+  <body>
+
+
+    <div layout:fragment="content">
+      
+      <div class="row">
+        
+        <div class="col-12"
+          <span th:if="${#lists.isEmpty(persons)}">V databázi není uložena žádná osoba.</span>
+        </div>
+      
+        <div th:each="person:${persons}" class="col-12 col-md-6 col-xl-4 px-1 px-md-2 px-lg-3 pb-2 pb-md-3">
+
+          <div class="card">
+
+            <div class="card-body container py-2 py-md-3">
+              <div class="row">
+                <div class="col">
+                  <span th:text="${person.name+' '+person.surname}"/>
+                </div>
+                <div class="col text-right">
+                  <span th:text="${'r.č. '+person.personalNo}" class="text-secondary small my-0 my-md-1"/>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col">
+                  <span th:text="${person.email}" class="text-secondary small my-0 my-md-1"/>
+                </div>
+                <div class="col text-right">
+                  <span th:text="${'☎ '+person.phoneNo}" class="text-secondary small my-0 my-md-1"/>
+                </div>
+              </div>
+              
+              <div class="row d-none d-md-block">
+                <div class="col-12">
+                  <hr/>
+                </div>
+              </div>
+              
+              <div class="row">
+
+                <div class="col-12">
+                  <div th:if="${#lists.isEmpty(person.insuranceList)}">
+                    <span class="text-danger">Tato osoba nemá sjednáno žádné pojištění.</span>
+                  </div>
+                  
+                  <div th:each="insurance:${person.insuranceList}">
+                    <span th:text="${insurance.contractNo}"/>
+                    <span th:text="${insurance.type}"/><br/>
+                  </div>
+                </div>
+                
+
+                <div class="col-12 mt-2">
+                  <a th:if="${#lists.isEmpty(person.insuranceList)}"
+                     th:href="@{/insurance_create(personId=${person.id})}"
+                     class="btn-sm btn-success mr-2">
+                    Přidat pojištění
+                  </a>
+                  <a th:if="${not #lists.isEmpty(person.insuranceList)}"
+                     th:href="@{/insurance_list(personId=${person.id})}"
+                     class="btn-sm btn-primary mr-2">
+                    Změna pojištění
+                  </a>
+                  
+                  </a>
+                  <a th:href="@{/person_detail(id=${person.id})}"
+                     class="btn-sm btn-secondary">
+                    Detail osoby
+                  </a>
+                </div>
+
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    
+    
+  </body>
+  
+</html>
